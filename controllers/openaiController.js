@@ -10,6 +10,7 @@ const generateImage = async (req, res) => {
 
   try {
     const response = await openai.images.generate({
+      model: "dall-e-3",
       prompt: prompt,
       n: 1,
       size: size,
