@@ -5,14 +5,11 @@ const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
 
-// console.log("apiKey -> ", client.apiKey);
-
 const generateImage = async (req, res) => {
   const { prompt, size } = req.body;
 
   try {
     const response = await openai.images.generate({
-      //   model: "dall-e-3",
       prompt: prompt,
       n: 1,
       size: size,
